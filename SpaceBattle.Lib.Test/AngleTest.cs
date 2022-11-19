@@ -11,7 +11,6 @@ public class AngleTest
         Assert.Equal(new Angle(90,1),c);
 
     }
-
     
     [Fact]
     public void NotSuccesfullSumOfAngles()
@@ -21,8 +20,6 @@ public class AngleTest
         Assert.False(a + b == new Angle(90, 2));
 
     }
-
-
 
     [Fact]
     public void DivizionByZeroException()

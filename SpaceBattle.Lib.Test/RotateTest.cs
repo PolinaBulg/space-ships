@@ -14,10 +14,8 @@ public class RotateTest
         ICommand rotateCommand = new RotateCommand(rotatableMock.Object);
         rotateCommand.Execute();
         Assert.Equal(new Angle (135, 1),rotatableMock.Object.Angle);
-
-
-
     }
+
     [Fact]
     public void setAngularException()
     {
@@ -31,6 +29,7 @@ public class RotateTest
         
 
     }
+
     [Fact]
     public void getAngularException()
     {
@@ -43,6 +42,7 @@ public class RotateTest
         Assert.Throws<Exception>(() => rotateCommand.Execute());
 
     }
+    
     [Fact]
     public void getAngularVelocityException()
     {
@@ -52,10 +52,4 @@ public class RotateTest
         ICommand rotateCommand = new RotateCommand(rotatableMock.Object);
         Assert.Throws<Exception>(() => rotateCommand.Execute());
     }
-
-    
-    
-    
-
-
 }
