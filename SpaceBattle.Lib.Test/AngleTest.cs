@@ -3,24 +3,18 @@ namespace SpaceBattle.Lib.Test;
 public class AngleTest
 {
     [Fact]
-    public void Positive()
+    public void SuccesfullSumOfAngles()
     {
         Angle a = new Angle(45, 1);
         Angle b = new Angle(90, 2);
-        Assert.Equal(a,b);
+        Angle c  = a + b;
+        Assert.Equal(new Angle(90,1),c);
 
     }
 
+    
     [Fact]
-    public void PositivSum()
-    {
-        Angle a = new Angle(45, 90);
-        Angle b = new Angle(45, 90);
-        Assert.Equal(new Angle(1, 1),a + b);
-
-    }   
-    [Fact]
-    public void NegativeSum()
+    public void NotSuccesfullSumOfAngles()
     {
         Angle a = new Angle(45, 1);
         Angle b = new Angle(90, 2);
@@ -38,7 +32,7 @@ public class AngleTest
     }
 
      [Fact]
-    public void CheckHashCode()
+    public void SuccesfullComparingHashCode()
     {
         Angle a = new Angle(45, 1);
         Angle b = new Angle(90, 2);
@@ -46,7 +40,7 @@ public class AngleTest
     }
     
        [Fact]
-    public void CheckHashCodeNeg()
+    public void NotSuccesfullComparingHashCode()
     {
         Angle a = new Angle(42, 1);
         Angle b = new Angle(90, 2);
@@ -54,24 +48,14 @@ public class AngleTest
     }
     
     [Fact]
-    public void SumResult()
-    {
-        Angle a = new Angle(45, 1);
-        Angle b = new Angle(90, 2);
-        Angle c  = a + b;
-        Assert.Equal(c,a + b);
-
-    }
-
-    [Fact]
-    public void CheckNOD()
+    public void SuccesfullWorkMethodNOD()
     {
         int nod = Angle.NOD(4, 5);
         Assert.Equal(1, nod);
     }
     
     [Fact]
-    public void NegEquel()
+    public void NotSuccesfullEqual()
     {
         Angle a = new Angle(45, 1);
         Angle b = new Angle(90, 2);
@@ -79,21 +63,10 @@ public class AngleTest
     }
 
     [Fact]
-    public void PosEquel()
+    public void NotEqualObjectsOfDifferentType()
     {
         Angle a = new Angle(45, 1);
         Assert.False(a.Equals("String"));
     }
-    
-   
-
-
-
-
-
-
-    
-
-
 
 }

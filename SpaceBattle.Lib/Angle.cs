@@ -2,8 +2,8 @@ namespace SpaceBattle.Lib;
 
 public class Angle
 {
-    public int numerator { get; set; }
-    public int denominator { get; set; }
+    public int Numerator { get; set; }
+    public int Denominator { get; set; }
 
     public Angle(int numerator, int denominator)
     {
@@ -13,8 +13,8 @@ public class Angle
         }
 
         int nod = NOD(numerator,denominator);
-        this.numerator = numerator / nod;
-        this.denominator = denominator / nod;
+        this.Numerator = numerator / nod;
+        this.Denominator = denominator / nod;
     }
     public static int NOD(int x,int y)
     {
@@ -30,17 +30,17 @@ public class Angle
     
     public static Angle operator +(Angle a, Angle b)
     {
-        int num = a.numerator * b.denominator + b.numerator * a.denominator;
-        int den = a.denominator * b.denominator;
+        int num = a.Numerator * b.Denominator + b.Numerator * a.Denominator;
+        int den = a.Denominator * b.Denominator;
         int nod = NOD(num, den);
         return new Angle(num/nod , den/nod);
     }
 
-    public static bool operator ==(Angle a, Angle b) => (a.numerator == b.numerator) && (a.denominator == b.denominator);
+    public static bool operator ==(Angle a, Angle b) => (a.Numerator == b.Numerator) && (a.Denominator == b.Denominator);
 
     public static bool operator !=(Angle a, Angle b) => !(a == b);
 
-    public override bool Equals(object? obj) => obj is Angle a && this.numerator == a.numerator && this.denominator == a.denominator;
+    public override bool Equals(object? obj) => obj is Angle a && this.Numerator == a.Numerator && this.Denominator == a.Denominator;
 
-    public override int GetHashCode() => ((this.numerator + this.denominator).ToString() ).GetHashCode();
+    public override int GetHashCode() => ((this.Numerator + this.Denominator).ToString() ).GetHashCode();
 }

@@ -10,6 +10,6 @@ public class RotateCommand : ICommand
 
     public void Execute()
     {
-        obj.angle += obj.angularVelocity;
+        obj.Angle += obj.AngularVelocity;
     }
 }
