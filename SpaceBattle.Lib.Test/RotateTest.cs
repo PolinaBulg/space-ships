@@ -4,7 +4,7 @@ using Moq;
 public class RotateTest
 {
     [Fact]
-    public void PositiveTest()
+    public void SuccessfullRotateCommand ()
     {
         Mock<IRotatable> rotatableMock = new Mock<IRotatable>();
         rotatableMock.SetupProperty<Angle>(m => m.Angle, new Angle (45, 1));
@@ -17,7 +17,7 @@ public class RotateTest
     }
 
     [Fact]
-    public void setAngularException()
+    public void AngleNotSetException()
     {
         Mock<IRotatable> rotatableMock = new Mock<IRotatable>();
         rotatableMock.SetupProperty(m => m.Angle, new Angle(45, 1));
@@ -31,7 +31,7 @@ public class RotateTest
     }
 
     [Fact]
-    public void getAngularException()
+    public void AngleNotGetException()
     {
         Mock<IRotatable> rotatableMock = new Mock<IRotatable>();
         
@@ -42,9 +42,9 @@ public class RotateTest
         Assert.Throws<Exception>(() => rotateCommand.Execute());
 
     }
-    
+
     [Fact]
-    public void getAngularVelocityException()
+    public void AnglularVelocityNotGetException()
     {
         Mock<IRotatable> rotatableMock = new Mock<IRotatable>();
         rotatableMock.SetupProperty<Angle>(m => m.Angle, new Angle (90, 1));
