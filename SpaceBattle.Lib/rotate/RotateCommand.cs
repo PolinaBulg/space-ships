@@ -2,14 +2,14 @@ namespace SpaceBattle.Lib;
 
 public class RotateCommand : ICommand
 {
-    private IRotatable obj;
+    private IRotatable Obj;
     public RotateCommand(IRotatable obj)
     {
-        this.obj = obj;
+        this.Obj = obj;
     }
 
     public void Execute()
     {
-        obj.Angle += obj.AngularVelocity;
+        Obj.Angle += Obj.AngularVelocity;
     }
 }
