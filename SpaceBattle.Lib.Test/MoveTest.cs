@@ -6,7 +6,7 @@ using Xunit;
 public class MoveTest
 {
     [Fact]
-    public void TestPositiveMove()
+    public void TestPositiveMoveCommandExecute()
     {
         Mock<IMovable> movableMock = new Mock<IMovable>();
         movableMock.SetupGet<Vector>(m => m.Position).Returns(new Vector(12, 5)).Verifiable();
@@ -18,7 +18,7 @@ public class MoveTest
     }
 
     [Fact]
-    public void TestNegativeGetPos()
+    public void TestNegativeGetPosition()
     {
         Mock<IMovable> movableMock = new Mock<IMovable>();
         movableMock.SetupGet<Vector>(m=>m.Position).Throws<Exception>().Verifiable();
@@ -28,7 +28,7 @@ public class MoveTest
     }
 
     [Fact]
-    public void TestNegativeGetVel()
+    public void TestNegativeGetVelocity()
     {
         Mock<IMovable> movableMock = new Mock<IMovable>();
         movableMock.SetupGet<Vector>(m=>m.Position).Returns(new Vector(5, 5)).Verifiable();
@@ -38,7 +38,7 @@ public class MoveTest
     }
 
     [Fact]
-    public void TestNegativeSetPos()
+    public void TestNegativeSetPosition()
     {
         Mock<IMovable> movableMock = new Mock<IMovable>();
         movableMock.SetupGet<Vector>(m => m.Position).Returns(new Vector(12, 5)).Verifiable();

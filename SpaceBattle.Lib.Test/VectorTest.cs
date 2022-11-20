@@ -6,7 +6,7 @@ using Xunit;
 public class VectorTest
 {
     [Fact]
-    public void TestPositivePlus()
+    public void TestPositiveVectorOperatorPlus()
     {
         Vector v1 = new Vector(1, 2);
         Vector v2 = new Vector(3, 4);
@@ -14,7 +14,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestNegativePlus()
+    public void TestNegativeVectorOperatorPlusDifferentSizeOfVectors()
     {
         Vector v1 = new Vector(1, 0, 0);
         Vector v2 = new Vector(1, 0);
@@ -22,7 +22,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestPositiveMinus()
+    public void TestPositiveVectorOperatorMinus()
     {
         Vector v1 = new Vector(1, 2);
         Vector v2 = new Vector(3, 4);
@@ -30,7 +30,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestNegativeMinus()
+    public void TestNegativeVectorOperatorMinusDifferentSizeOfVectors()
     {
         Vector v1 = new Vector(1, 0, 0);
         Vector v2 = new Vector(1, 0);
@@ -38,7 +38,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestPositiveEquality()
+    public void TestPositiveVectorOperatorEquality()
     {
         Vector v1 = new Vector(1, 2);
         Vector v2 = new Vector(1, 2);
@@ -46,7 +46,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestNegativeEquality1()
+    public void TestNegativeVectorOperatorEqualityDifferntValues()
     {
         Vector v1 = new Vector(1, 2);
         Vector v2 = new Vector(3, 4);
@@ -54,7 +54,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestNegativeEquality2()
+    public void TestNegativeVectorOperatorEqualityDifferentSizeOfVectors()
     {
         Vector v1 = new Vector(1, 2);
         Vector v2 = new Vector(3, 4, 5);
@@ -62,7 +62,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestPositiveNotEquality()
+    public void TestPositiveVectorOperatorNotEquality()
     {
         Vector v1 = new Vector(1, 2);
         Vector v2 = new Vector(3, 4);
@@ -70,7 +70,7 @@ public class VectorTest
     }
     
     [Fact]
-    public void TestNegativeNotEquality()
+    public void TestNegativeVectorOperatorNotEqualitySameValues()
     {
         Vector v1 = new Vector(1, 2);
         Vector v2 = new Vector(1, 2);
@@ -85,14 +85,14 @@ public class VectorTest
     }
 
     [Fact]
-    public void TestNegativeEquals()
+    public void TestNegativeEqualsDifferentValues()
     {
         Vector v1 = new Vector(1, 2);
         Assert.False(v1.Equals(new Vector(2, 3)));
     }
 
     [Fact]
-    public void TestNegativeEquals2()
+    public void TestNegativeEqualsDifferentTypes()
     {
         Vector v1 = new Vector(1, 2);
         int n = 1;
@@ -100,7 +100,7 @@ public class VectorTest
     }
 
     [Fact]
-    public void HashCode()
+    public void TestGetHashCode()
     {
         Vector v1 = new Vector(1, 1);
         Vector v2 = new Vector(1, 1);
