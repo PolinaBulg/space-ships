@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace SpaceBattle.Lib;
 
-namespace SpaceBattle.Lib.startMoveCmd
+
+public interface IMoveCommandStartable
 {
-    public interface IMoveCommandStartable
-    {
-        
-    }
+    IUObject Object { get; }
+
+    Vector Velocity { get; }
+
+    IEnumerable<ICommand> Queue { get; }
 }
