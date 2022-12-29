@@ -345,6 +345,7 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+coverage/
 
 # Azure Stream Analytics local run output
 ASALocalRun/
@@ -392,3 +393,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+/coverage/
