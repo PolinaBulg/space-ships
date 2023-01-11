@@ -10,20 +10,11 @@ public class DetectCollisionCommand : ICommand
     }
     public void Execute()
     {
-        var coordinatesFirst = IoC.Resolve<int[]>("Operations.GetProperty", firstObject, "Position");
-        var coordinatesSecond = IoC.Resolve<int[]>("Operations.GetProperty", secondObject, "Position");
-
-        var velocityFirst = IoC.Resolve<int[]>("Operations.GetProperty", firstObject, "Velocity");
-        var velocitySecond = IoC.Resolve<int[]>("Operations.GetProperty", secondObject, "Velocity");
-
-        var vectorDelta = IoC.Resolve<int[]>("Operations.CalculateDifferences", coordinatesFirst,velocityFirst, coordinatesSecond, velocitySecond);
-        var solutionTree = IoC.Resolve<IDictionary<int, object>>("Operations.GetSolutionTree");
-
-        var result = IoC.Resolve<bool>("Tools.SolutionTree.TreePass", solutionTree, vectorDelta);
-
+        var vectorDelta = IoC.Resolve<Vector>("Operations.CalculateDifferences", firstObject,secondObject);
+        var result = IoC.Resolve<bool>("Tools.SolutionTree.TreePass", vectorDelta);
         if (result)
         {
-            throw new Exception();
+            throw new Exception("Collision has been detected!");
         }
 
     }
