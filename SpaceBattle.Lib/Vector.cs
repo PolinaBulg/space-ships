@@ -14,7 +14,7 @@ public class Vector{
         }
 
     }
-    public int[]  Concatenate(Vector other){
+    public int[] Concatenate(Vector other){
 
         return (int[])vec.Concat(other.vec);
 
