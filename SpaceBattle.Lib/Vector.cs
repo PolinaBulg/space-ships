@@ -14,6 +14,13 @@ public class Vector{
         }
 
     }
+    public int[]  Concatenate(Vector other){
+
+        return (int[])vec.Concat(other.vec);
+
+    }
+
+    
     public static Vector operator + (Vector v1, Vector v2){
         if (v1.size != v2.size)
             throw new System.ArgumentException();
