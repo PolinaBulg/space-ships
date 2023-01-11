@@ -44,6 +44,14 @@ public class VectorTest
         Vector v2 = new Vector(1, 2);
         Assert.True(v1==v2);
     }
+    [Fact]
+    public void TestPositiveMethodConcatenate()
+    {
+        Vector v1 = new Vector(1, 2);
+        Vector v2 = new Vector(3, 4);
+        Vector v3 = new Vector(1,2, 3, 4);
+        Assert.True((v1.Concatenate(v2))==v3);
+    }
 
     [Fact]
     public void TestNegativeVectorOperatorEqualityDifferntValues()

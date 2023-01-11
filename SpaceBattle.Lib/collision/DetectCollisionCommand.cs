@@ -16,6 +16,5 @@ public class DetectCollisionCommand : ICommand
         {
             throw new Exception("Collision has been detected!");
         }
-
     }
 }
